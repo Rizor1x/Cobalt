@@ -1,7 +1,6 @@
 <div align="center">
-  <img src="https://github.com/Rizor1x/Cobalt/blob/main/%D1%81obalt_logo.png" alt="cobalt Logo" width="100%"/>
+  <img src="https://raw.githubusercontent.com/Rizor1x/Cobalt/main/cobalt_logo.png" alt="Cobalt Logo" width="100%"/>
   <h1>Cobalt Programming Language</h1>
-  <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
   <p><b>Rust's speed. Python's elegance. No more Borrow Checker pain.</b></p>
 
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
@@ -9,51 +8,42 @@
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
 
----
-
-## 🚀 About / О проекте
-
-**Cobalt** — это строго типизированный, компилируемый язык программирования следующего поколения.
-**Cobalt** is a statically typed, compiled programming language of the next generation.
-
-Под капотом Cobalt является **source-to-source транслятором**. Он берет ваш код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust.
-Under the hood, Cobalt is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
+🇷🇺 [Read in Russian](README.ru.md)
 
 ---
 
-## 🗺️ Roadmap / Дорожная карта
+## 🚀 About
+**Cobalt** is a statically typed, compiled programming language of the next generation. Under the hood, Cobalt is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
 
-#### `v0.1.0` — The Foundation (Фундамент)
-- [ ] **Lexer & Parser:** Создание грамматики и дерева (AST) на `Lark`.
-- [ ] **AST & IR:** Проектирование промежуточного представления кода.
-- [ ] **Code Gen:** Трансляция в базовый синтаксис Rust (переменные, `print`, типы).
-- [ ] **Build Pipeline:** Прямая интеграция с `cargo` для автоматической сборки бинарных файлов.
+## 🗺️ Roadmap
+#### `v0.1.0` — The Foundation
+- [ ] **Lexer & Parser:** Creating grammar and tree (AST) on `Lark`.
+- [ ] **AST & IR:** Designing an intermediate representation of the code.
+- [ ] **Code Gen:** Translation into the basic syntax of Rust (variables, `print`, types).
+- [ ] **Build Pipeline:** Direct integration with `cargo` for automatic binary file assembly.
 
-#### `v0.2.0` — Logic & Flow (Логика и Потоки)
-- [ ] **Control Flow:** Условные операторы (`if / else`).
-- [ ] **Loops:** Реализация циклов (`for`, `while`).
-- [ ] **Functions:** Функции с аргументами и возвратом значений.
-- [ ] **Operators:** Полный набор арифметических и логических операций.
+#### `v0.2.0` — Logic & Flow
+- [ ] **Control Flow:** Conditional operators (`if / else`).
+- [ ] **Loops:** Implementing cycles (`for`, `while`).
+- [ ] **Functions:** Functions with arguments and return values.
+- [ ] **Operators:** A full set of arithmetic and logical operations.
 
-#### `v0.3.0` — Data & Safety (Структуры и Безопасность)
-- [ ] **Object Model:** Реализация `class` с авто-генерацией `struct` и `impl` в Rust.
-- [ ] **Memory Safety:** Умная авто-расстановка ссылок и `.clone()` (избавление от боли с Borrow Checker).
-- [ ] **Error Handling:** Безопасная обработка ошибок через `Result` и оператор `?`.
+#### `v0.3.0` — Data & Safety
+- [ ] **Object Model:** Implementing `class` with auto-generation of `struct` and `impl` in Rust.
+- [ ] **Memory Safety:** Smart auto-referencing and `.clone()` management (getting rid of Borrow Checker pain).
+- [ ] **Error Handling:** Safe error handling via `Result` and the `?` operator.
 
-#### `v0.4.0` — Developer Experience (CLI & Tooling)
-- [ ] **CLI Tool:** Создание команды `cobalt` (аналог `cargo` или `go`).
-- [ ] **Project Management:** Реализация `cobalt init` для создания проектов и `cobalt run file.co` для быстрого запуска.
-- [ ] **Package System:** Базовое управление модулями и зависимостями.
+#### `v0.4.0` — Developer Experience (CLI)
+- [ ] **CLI Tool:** Creating a `cobalt` command (analogous to `cargo` or `go`).
+- [ ] **Project Management:** Implementing `cobalt init` and `cobalt run file.co`.
+- [ ] **Package System:** Basic module and dependency management.
 
-#### `v1.0.0` — Self-Hosting (Стабильный релиз)
-- [ ] **Standard Library:** Написание базовой стандартной библиотеки на Cobalt.
-- [ ] **Compiler Rewrite:** Переписывание компилятора с Python на самом Cobalt.
-- [ ] **Final Polish:** Стабилизация API, покрытие тестами и подготовка к первому стабильному релизу.
+#### `v1.0.0` — Self-Hosting (Stable)
+- [ ] **Standard Library:** Writing a basic standard library in Cobalt.
+- [ ] **Compiler Rewrite:** Rewriting the compiler from Python to Cobalt itself.
+- [ ] **Final Polish:** API stabilization, testing, and preparation for the first stable release.
 
----
-
-## 💡 Code Example / Пример кода
-
+## 💡 Code Example
 ```Cobalt
 class Task {
     val id: int
@@ -67,7 +57,6 @@ class Task {
 
 fn main() {
     var tasks = [Task(1, "Build lexer"), Task(2, "Build parser")]
-
     for task in tasks {
         if not task.is_done {
             print("Processing: {task.title}")
@@ -80,13 +69,11 @@ fn main() {
 
 ## 🤝 Community / Сообщество
 
-Язык разрабатывается публично.
 The language is developed in public.
 
-**YouTube** — следите за процессом разработки / follow the dev process.
+**YouTube** — follow the dev process.
 
-**Issues** — предлагайте фичи / suggest new features.
+**Issues** — suggest new features.
 
-Поставьте ⭐️ этому репозиторию, если ждете релиза!
-
+Put ⭐️ to this repository if you are waiting for a release!
 **Built with ❤️ by Rizor1x**
