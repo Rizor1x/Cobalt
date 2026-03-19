@@ -68,9 +68,12 @@ fn main() {
 
 ## 🤝 Сообщество
 Язык разрабатывается публично.
-- [YouTube](https://www.youtube.com/@Rizor1x) — следите за процессом разработки.
-- [Issues](https://github.com/Rizor1x/Cobalt/issues) — предлагайте фичи.
+
+- [YouTube](https://www.youtube.com/@Rizor1x) - следите за процессом разработки.
+- [Issues](https://github.com/Rizor1x/Cobalt/issues) - предлагайте фичи.
 
 Поставьте ⭐️ этому репозиторию, если ждете релиза!
+
 ---
+
 **Built with ❤️ by Rizor1x**

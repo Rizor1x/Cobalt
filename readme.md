@@ -71,10 +71,12 @@ fn main() {
 
 The language is developed in public.
 
-**YouTube** — follow the dev process.
+- [YouTube](https://www.youtube.com/@Rizor1x) - follow the dev process.
 
-**Issues** — suggest new features.
+- [Issues](https://github.com/Rizor1x/Cobalt/issues) - suggest new features.
 
 Put ⭐️ to this repository if you are waiting for a release!
+
 ---
+
 **Built with ❤️ by Rizor1x**
