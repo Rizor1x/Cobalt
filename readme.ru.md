@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Rizor1x/Cobalt/blob/main/cobalt_logo.png" alt="Cobalt Logo" width="100%"/>
+  <img src="https://github.com/Rizor1x/Cobalt/blob/main/%D1%81obalt_logo.png" alt="Cobalt Logo" width="100%"/>
   <h1>Cobalt Programming Language</h1>
   <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
 
@@ -8,7 +8,7 @@
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
 
-🇬🇧 [Read in English](README.md)
+🇬🇧 [Read in English](https://github.com/Rizor1x/Cobalt/blob/main/readme.md)
 
 ---
 
