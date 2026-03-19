@@ -4,7 +4,7 @@
   <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
 
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
-  [![License](https://img.shields.io/badge/license-MIT-green.svg)]()
+  [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](ТВОЯ_ССЫЛКА_НА_КАНАЛ)
 </div>
 
@@ -55,6 +55,7 @@ fn main() {
         }
     }
 }
+```
 
 🗺️ Дорожная карта (Roadmap)
 
