@@ -72,4 +72,5 @@ fn main() {
 - [Issues](https://github.com/Rizor1x/Cobalt/issues) — предлагайте фичи.
 
 Поставьте ⭐️ этому репозиторию, если ждете релиза!
+---
 **Built with ❤️ by Rizor1x**

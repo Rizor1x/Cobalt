@@ -76,4 +76,5 @@ The language is developed in public.
 **Issues** — suggest new features.
 
 Put ⭐️ to this repository if you are waiting for a release!
+---
 **Built with ❤️ by Rizor1x**
