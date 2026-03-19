@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Rizor1x/Cobalt/blob/main/cobalt_logo.png" alt="Cobalt Logo" width="100%"/>
+  <img src="https://github.com/Rizor1x/Cobalt/blob/main/cobalt_logo.png" alt="Cobalt Logo" width="100%"/>
   <h1>Cobalt Programming Language</h1>
   <p><b>Rust's speed. Python's elegance. No more Borrow Checker pain.</b></p>
-
+  
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
   [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
