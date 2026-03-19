@@ -1,80 +1,90 @@
 <div align="center">
-  <img src="cobalt_logo.png" alt="Cobalt Logo" width="100%"/>
+  <img src="https://raw.githubusercontent.com/Rizor1x/Cobalt/main/cobalt_logo.png" alt="Cobalt Logo" width="100%"/>
   <h1>Cobalt Programming Language</h1>
   <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
+  <p><b>Rust's speed. Python's elegance. No more Borrow Checker pain.</b></p>
 
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
   [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
-  [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](ТВОЯ_ССЫЛКА_НА_КАНАЛ)
+  [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
 
 ---
 
-## 🚀 Что такое Cobalt?
-**Cobalt** — это строго типизированный, компилируемый язык программирования следующего поколения. 
-Он создается для тех, кто любит минималистичный и читаемый синтаксис (как в Python), но нуждается в бескомпромиссной производительности и безопасности (как в Rust или C++).
+## 🚀 About / О проекте
 
-Под капотом Cobalt является **source-to-source транслятором (transpiler)**. Он берет ваш красивый код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust, который затем компилируется в бинарник.
+**Cobalt** — это строго типизированный, компилируемый язык программирования следующего поколения.
+**Cobalt** is a statically typed, compiled programming language of the next generation.
 
-### 🔥 Философия языка:
-1. **Developer Experience (DX) на первом месте:** Никаких точек с запятой, сложного управления временем жизни (lifetimes) и визуального шума.
-2. **Нулевой оверхед:** Вы получаете скорость C/Rust без использования тяжелого Garbage Collector'а.
-3. **Web-Native:** Встроенная поддержка создания API и компиляции в WebAssembly (в разработке).
+Под капотом Cobalt является **source-to-source транслятором**. Он берет ваш код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust.
+Under the hood, Cobalt is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
 
 ---
 
-## 💡 Как выглядит код? (Концепт)
+## 🗺️ Roadmap / Дорожная карта
 
-Забудьте про ручное разделение на `struct` и `impl` или мучения с макросами. Пишите логику:
+#### `v0.1.0` — The Foundation (Фундамент)
+- [ ] **Lexer & Parser:** Создание грамматики и дерева (AST) на `Lark`.
+- [ ] **AST & IR:** Проектирование промежуточного представления кода.
+- [ ] **Code Gen:** Трансляция в базовый синтаксис Rust (переменные, `print`, типы).
+- [ ] **Build Pipeline:** Прямая интеграция с `cargo` для автоматической сборки бинарных файлов.
+
+#### `v0.2.0` — Logic & Flow (Логика и Потоки)
+- [ ] **Control Flow:** Условные операторы (`if / else`).
+- [ ] **Loops:** Реализация циклов (`for`, `while`).
+- [ ] **Functions:** Функции с аргументами и возвратом значений.
+- [ ] **Operators:** Полный набор арифметических и логических операций.
+
+#### `v0.3.0` — Data & Safety (Структуры и Безопасность)
+- [ ] **Object Model:** Реализация `class` с авто-генерацией `struct` и `impl` в Rust.
+- [ ] **Memory Safety:** Умная авто-расстановка ссылок и `.clone()` (избавление от боли с Borrow Checker).
+- [ ] **Error Handling:** Безопасная обработка ошибок через `Result` и оператор `?`.
+
+#### `v0.4.0` — Developer Experience (CLI & Tooling)
+- [ ] **CLI Tool:** Создание команды `cobalt` (аналог `cargo` или `go`).
+- [ ] **Project Management:** Реализация `cobalt init` для создания проектов и `cobalt run file.co` для быстрого запуска.
+- [ ] **Package System:** Базовое управление модулями и зависимостями.
+
+#### `v1.0.0` — Self-Hosting (Стабильный релиз)
+- [ ] **Standard Library:** Написание базовой стандартной библиотеки на Cobalt.
+- [ ] **Compiler Rewrite:** Переписывание компилятора с Python на самом Cobalt.
+- [ ] **Final Polish:** Стабилизация API, покрытие тестами и подготовка к первому стабильному релизу.
+
+---
+
+## 💡 Code Example / Пример кода
 
 ```Cobalt
-use std::io
-use std::fs::File
-
-// Все данные и методы в одном понятном блоке
 class Task {
     val id: int
     val title: string
     var is_done: bool = false
 
-    // Метод, изменяющий состояние
     fn complete(var self) {
         self.is_done = true
     }
 }
 
 fn main() {
-    var tasks =[
-        Task(1, "Создать лексер"),
-        Task(2, "Написать парсер")
-    ]
+    var tasks = [Task(1, "Build lexer"), Task(2, "Build parser")]
 
     for task in tasks {
         if not task.is_done {
-            print("В процессе: {task.title}")
+            print("Processing: {task.title}")
         }
     }
 }
 ```
 
-🗺️ Дорожная карта (Roadmap)
+🤝 Community / Сообщество
 
-Проект находится на стадии зарождения. Весь процесс создания языка я документирую на своем YouTube-канале!
+Язык разрабатывается публично.
+The language is developed in public.
 
-[] v0.1 (Bootstrap): Базовый транслятор на Python (Лексер, Парсер, AST).
+YouTube — следите за процессом разработки / follow the dev process.
 
-[] v0.2: Классы, ООП и умный анализатор для автогенерации кода Rust (избавление от боли с Borrow Checker).
-
-[] v0.3: Web-Native фичи (создание бекенда одним словом api fn).
-
-[] v1.0 (Self-Hosting): Переписывание компилятора Cobalt на самом Cobalt! 🚀
-
-🤝 Как поучаствовать?
-
-Язык разрабатывается публично. Если у вас есть идеи по синтаксису, фичам или вы хотите помочь с парсером на Python — открывайте Issues или присылайте Pull Requests!
-
-Подпишитесь на YouTube-канал, чтобы следить за архитектурными решениями.
+Issues — предлагайте фичи / suggest new features.
 
 Поставьте ⭐️ этому репозиторию, если ждете релиза!
 
-Built with ❤️ for developers who value their time.
+Built with ❤️ by Rizor1x
