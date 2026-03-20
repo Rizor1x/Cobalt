@@ -23,7 +23,7 @@ def main():
         ast_tree = parse_code(code)
 
         rust_generator = RustGen()
-        rust_code = rust_generator.transform(ast_tree)
+        rust_code = rust_generator.transform(ast_tree) 
 
         file_dir = os.path.dirname(file_path)
         base_name = os.path.splitext(os.path.basename(file_path))[0]
@@ -53,3 +53,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
