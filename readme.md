@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Rizor1x/Cobalt/blob/main/%D1%81obalt_logo.png" alt="Cobalt Logo" width="100%"/>
+  <img src="https://github.com/Rizor1x/Crest/blob/main/crest_logo.png" alt="Cobalt Logo" width="100%"/>
   <h1>Cobalt Programming Language</h1>
   <p><b>Rust's speed. Python's elegance. No more Borrow Checker pain.</b></p>
 
