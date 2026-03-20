@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://github.com/Rizor1x/Crest/blob/main/crest_logo.png" alt="Cobalt Logo" width="100%"/>
-  <h1>Cobalt Programming Language</h1>
+  <h1>Crest Programming Language</h1>
   <p><b>Rust's speed. Python's elegance. No more Borrow Checker pain.</b></p>
 
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
@@ -13,7 +13,7 @@
 ---
 
 ## 🚀 About
-**Cobalt** is a statically typed, compiled programming language of the next generation. Under the hood, Cobalt is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
+**Crest** is a statically typed, compiled programming language of the next generation. Under the hood, Cobalt is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
 
 ## 🗺️ Roadmap
 #### `v0.1.0` — The Foundation
