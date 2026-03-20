@@ -4,7 +4,7 @@
   <p><b>Rust's speed. Python's elegance. No more Borrow Checker pain.</b></p>
 
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
-  [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
+  [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
 
@@ -12,10 +12,10 @@
 
 ---
 
-## 🚀 About
+## About
 **Crest** is a statically typed, compiled programming language of the next generation. Under the hood, Cobalt is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
 
-## 🗺️ Roadmap
+## Roadmap
 #### `v0.1.0` — The Foundation
 - [ ] **Lexer & Parser:** Creating grammar and tree (AST) on `Lark`.
 - [ ] **AST & IR:** Designing an intermediate representation of the code.
@@ -43,7 +43,7 @@
 - [ ] **Compiler Rewrite:** Rewriting the compiler from Python to Cobalt itself.
 - [ ] **Final Polish:** API stabilization, testing, and preparation for the first stable release.
 
-## 💡 Code Example
+## Code Example
 ```Cobalt
 class Task {
     val id: int
@@ -67,7 +67,7 @@ fn main() {
 
 ---
 
-## 🤝 Community / Сообщество
+## Community / Сообщество
 
 The language is developed in public.
 
