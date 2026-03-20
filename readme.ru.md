@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Rizor1x/Crest/blob/main/crest_logo.png" alt="Cobalt Logo" width="100%"/>
+  <img src="https://github.com/Rizor1x/Crest/blob/main/crest_logo.png" alt="Crest Logo" width="100%"/>
   <h1>Crest Programming Language</h1>
   <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
 
@@ -8,12 +8,12 @@
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
 
-🇬🇧 [Read in English](https://github.com/Rizor1x/Cobalt/blob/main/readme.md)
+🇬🇧 [Read in English](https://github.com/Rizor1x/Crest/blob/main/readme.md)
 
 ---
 
 ## О проекте
-**Crest** — это строго типизированный, компилируемый язык программирования следующего поколения. Под капотом Cobalt является **source-to-source транслятором**. Он берет ваш код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust.
+**Crest** — это строго типизированный, компилируемый язык программирования следующего поколения. Под капотом Crest является **source-to-source транслятором**. Он берет ваш код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust.
 
 ## Дорожная карта
 
@@ -35,13 +35,13 @@
 - [ ] **Обработка ошибок:** Безопасная обработка через `Result` и оператор `?`.
 
 #### `v0.4.0` — CLI и инструменты
-- [ ] **CLI Tool:** Создание команды `cobalt`.
-- [ ] **Управление проектами:** Реализация `cobalt init` и `cobalt run file.co`.
+- [ ] **CLI Tool:** Создание команды `crest`.
+- [ ] **Управление проектами:** Реализация `crest init` и `ccresto`.
 - [ ] **Система пакетов:** Базовое управление модулями и зависимостями.
 
 #### `v1.0.0` — Стабильный релиз (Self-Hosting)
-- [ ] **Стандартная библиотека:** Написание базовой библиотеки на Cobalt.
-- [ ] **Переписывание компилятора:** Переписывание компилятора с Python на самом Cobalt.
+- [ ] **Стандартная библиотека:** Написание базовой библиотеки на Crest.
+- [ ] **Переписывание компилятора:** Переписывание компилятора с Python на самом Crest.
 - [ ] **Финальная полировка:** Стабилизация API, покрытие тестами и подготовка к релизу.
 
 ## Пример кода
@@ -70,7 +70,7 @@ fn main() {
 Язык разрабатывается публично.
 
 - [YouTube](https://www.youtube.com/@Rizor1x) - следите за процессом разработки.
-- [Issues](https://github.com/Rizor1x/Cobalt/issues) - предлагайте фичи.
+- [Issues](https://github.com/Rizor1x/Crest/issues) - предлагайте фичи.
 
 Поставьте ⭐️ этому репозиторию, если ждете релиза!
 

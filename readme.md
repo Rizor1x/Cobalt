@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/Rizor1x/Crest/blob/main/crest_logo.png" alt="Cobalt Logo" width="100%"/>
+  <img src="https://github.com/Rizor1x/Crest/blob/main/crest_logo.png" alt="Crest Logo" width="100%"/>
   <h1>Crest Programming Language</h1>
   <p><b>Rust's speed. Python's elegance. No more Borrow Checker pain.</b></p>
 
@@ -8,12 +8,12 @@
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
 
-🇷🇺 [Read in Russian](https://github.com/Rizor1x/Cobalt/blob/main/readme.ru.md)
+🇷🇺 [Read in Russian](https://github.com/Rizor1x/Crest/blob/main/readme.ru.md)
 
 ---
 
 ## About
-**Crest** is a statically typed, compiled programming language of the next generation. Under the hood, Cobalt is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
+**Crest** is a statically typed, compiled programming language of the next generation. Under the hood, Crest is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
 
 ## Roadmap
 #### `v0.1.0` — The Foundation
@@ -34,13 +34,13 @@
 - [ ] **Error Handling:** Safe error handling via `Result` and the `?` operator.
 
 #### `v0.4.0` — Developer Experience (CLI)
-- [ ] **CLI Tool:** Creating a `cobalt` command (analogous to `cargo` or `go`).
-- [ ] **Project Management:** Implementing `cobalt init` and `cobalt run file.co`.
+- [ ] **CLI Tool:** Creating a `crest` command (analogous to `cargo` or `go`).
+- [ ] **Project Management:** Implementing `crest init` and `crest run file.co`.
 - [ ] **Package System:** Basic module and dependency management.
 
 #### `v1.0.0` — Self-Hosting (Stable)
-- [ ] **Standard Library:** Writing a basic standard library in Cobalt.
-- [ ] **Compiler Rewrite:** Rewriting the compiler from Python to Cobalt itself.
+- [ ] **Standard Library:** Writing a basic standard library in Crest.
+- [ ] **Compiler Rewrite:** Rewriting the compiler from Python to Crest itself.
 - [ ] **Final Polish:** API stabilization, testing, and preparation for the first stable release.
 
 ## Code Example
@@ -73,7 +73,7 @@ The language is developed in public.
 
 - [YouTube](https://www.youtube.com/@Rizor1x) - follow the dev process.
 
-- [Issues](https://github.com/Rizor1x/Cobalt/issues) - suggest new features.
+- [Issues](https://github.com/Rizor1x/Crest/issues) - suggest new features.
 
 Put ⭐️ to this repository if you are waiting for a release!
 
