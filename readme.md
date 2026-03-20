@@ -44,7 +44,7 @@
 - [ ] **Final Polish:** API stabilization, testing, and preparation for the first stable release.
 
 ## Code Example
-```Cobalt
+```Crest
 class Task {
     val id: int
     val title: string
