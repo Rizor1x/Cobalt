@@ -1,0 +1,4 @@
+val age = 20
+var name = "Crest"
+print(age)
+print(name)
