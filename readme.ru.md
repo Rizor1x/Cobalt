@@ -4,7 +4,7 @@
   <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
 
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
-  [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
+  [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
 
@@ -12,10 +12,10 @@
 
 ---
 
-## 🚀 О проекте
+## О проекте
 **Crest** — это строго типизированный, компилируемый язык программирования следующего поколения. Под капотом Cobalt является **source-to-source транслятором**. Он берет ваш код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust.
 
-## 🗺️ Дорожная карта
+## Дорожная карта
 
 #### `v0.1.0` — Фундамент
 - [ ] **Лексер и Парсер:** Создание грамматики и дерева (AST) на `Lark`.
@@ -44,8 +44,8 @@
 - [ ] **Переписывание компилятора:** Переписывание компилятора с Python на самом Cobalt.
 - [ ] **Финальная полировка:** Стабилизация API, покрытие тестами и подготовка к релизу.
 
-## 💡 Пример кода
-```Cobalt
+## Пример кода
+```Crest
 class Task {
     val id: int
     val title: string
@@ -66,7 +66,7 @@ fn main() {
 }
 ```
 
-## 🤝 Сообщество
+## Сообщество
 Язык разрабатывается публично.
 
 - [YouTube](https://www.youtube.com/@Rizor1x) - следите за процессом разработки.
