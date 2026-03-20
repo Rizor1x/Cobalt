@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://github.com/Rizor1x/Cobalt/blob/main/%D1%81obalt_logo.png" alt="Cobalt Logo" width="100%"/>
-  <h1>Cobalt Programming Language</h1>
+  <img src="https://github.com/Rizor1x/Crest/blob/main/crest_logo.png" alt="Cobalt Logo" width="100%"/>
+  <h1>Crest Programming Language</h1>
   <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
 
   [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
@@ -13,7 +13,7 @@
 ---
 
 ## 🚀 О проекте
-**Cobalt** — это строго типизированный, компилируемый язык программирования следующего поколения. Под капотом Cobalt является **source-to-source транслятором**. Он берет ваш код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust.
+**Crest** — это строго типизированный, компилируемый язык программирования следующего поколения. Под капотом Cobalt является **source-to-source транслятором**. Он берет ваш код на `.co`, интеллектуально анализирует его и генерирует высокооптимизированный код на Rust.
 
 ## 🗺️ Дорожная карта
 
