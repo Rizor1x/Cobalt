@@ -23,8 +23,8 @@ crest_grammar = """
     ?term: factory (("+" | "-") factory)*
     ?factory: atom (("*" | "/") atom)*
     ?atom: NUMBER -> number 
-         | STRING -> string 
-         | NAME   -> var_name
+        | STRING -> string 
+        | NAME   -> var_name
 
     %import common.SIGNED_NUMBER -> NUMBER
     %import common.ESCAPED_STRING -> STRING
