@@ -13,7 +13,7 @@
 ---
 
 ## About
-**Crest** is a statically typed, compiled programming language of the next generation. Under the hood, Crest is a **source-to-source transpiler**. It takes your `.co` code, intelligently analyzes it, and generates highly optimized Rust code.
+**Crest** is a statically typed, compiled programming language of the next generation. Under the hood, Crest is a **source-to-source transpiler**. It takes your `.crs` code, intelligently analyzes it, and generates highly optimized Rust code.
 
 ## Roadmap
 #### `v0.1.0` — The Foundation
