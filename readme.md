@@ -25,8 +25,8 @@
 #### `v0.2.0` — Logic & Flow
 - [x] **Control Flow:** Conditional operators (`if / else`).
 - [ ] **Loops:** Implementing cycles (`for`, `while`).
-- [ ] **Functions:** Functions with arguments and return values.
-- [ ] **Operators:** A full set of arithmetic and logical operations.
+- [x] **Functions:** Functions with arguments and return values.
+- [x] **Operators:** A full set of arithmetic and logical operations.
 
 #### `v0.3.0` — Data & Safety
 - [ ] **Object Model:** Implementing `class` with auto-generation of `struct` and `impl` in Rust.

@@ -5,6 +5,7 @@ class RustGen(Transformer):
     def __init__(self, code, file_path):
         self.code = code
         self.file_path = file_path
+        self.level = 0
         super().__init__()
 
     def start(self, statements):
@@ -12,12 +13,40 @@ class RustGen(Transformer):
         return f"fn main() {{\n    {code}\n}}"
     
     def block(self, items):
-        code = "\n    ".join(items)
-        return f"{{\n    {code}\n}}"
+        self.level += 1
+        indent = "    " * self.level
+
+        code = f"\n{indent}".join(items)
+
+        self.level -= 1
+        return f"{{\n{indent}{code}\n{'    ' * self.level}}}"
     
     def condition(self, items):
-        result = [getattr(i, 'value', str(i)) for i in items]
-        return " ".join(result)
+        res = []
+        for i in items:
+            val = getattr(i, 'value', str(i))
+
+            mapping = {
+                "and": "&&",
+                "or": "||",
+                "==": "==", "!=": "!=", ">": ">", "<": "<", ">=": ">=", "<=": "<="
+            }
+            res.append(mapping.get(val, val))
+            
+        return " ".join(res)
+
+    def while_stmt(self, items):
+        cond = items[0]
+        w_block = items[1]
+        return f"while {cond} {w_block}"
+
+    def for_stmt(self, items):
+        iterator_name = items[0].value
+        start_val = items[1]
+        end_val = items[3]
+        f_block = items[4]
+
+        return f"for {iterator_name} in {start_val}..{end_val} {f_block}"
 
     def if_stmt(self, items):
         cond = items[0]
@@ -63,6 +92,12 @@ class RustGen(Transformer):
         var_value = items[2]
 
         return f"{var_type} {var_name} = {var_value};"
+    
+    def assign_stmt(self, items):
+        var_name = items[0].value
+        var_value = items[1]
+
+        return f"{var_name} = {var_value};"
         
     def print_stmt(self, items):
         expr = items[0]
@@ -79,9 +114,25 @@ class RustGen(Transformer):
         return items[0].value
     
     def term(self, items):
-        result =[getattr(i, 'value', str(i)) for i in items]
+        result = []
+        for i in items:
+            if hasattr(i, 'value'):
+                result.append(i.value)
+            else:
+                result.append(str(i))
         return " ".join(result)
 
     def factory(self, items):
-        result =[getattr(i, 'value', str(i)) for i in items]
+        result = []
+        for i in items:
+            if hasattr(i, 'value'):
+                result.append(i.value)
+            else:
+                result.append(str(i))
         return " ".join(result)
+    
+    def int_num(self, items):
+        return items[0].value
+    
+    def float_num(self, items):
+        return items[0].value
