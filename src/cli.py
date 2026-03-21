@@ -4,6 +4,7 @@ import subprocess
 from parser import parse_code
 
 from generator import RustGen
+from error import CrestError 
 
 def main():
     if len(sys.argv) < 2:
@@ -22,7 +23,7 @@ def main():
     try:
         ast_tree = parse_code(code)
 
-        rust_generator = RustGen()
+        rust_generator = RustGen(code, file_path)
         rust_code = rust_generator.transform(ast_tree) 
 
         file_dir = os.path.dirname(file_path)
@@ -48,8 +49,10 @@ def main():
         
         subprocess.run([exe_file_path])
 
-    except Exception as e:
+    except CrestError as e:
         print(e)
+    except Exception as e:
+        print(f"Системная ошибка: {e}")
 
 if __name__ == "__main__":
     main()

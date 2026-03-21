@@ -1,4 +1,7 @@
-val age = 20
-var name = "Crest"
-print(age)
-print(name)
+val age: intasd = 25
+
+if age >= 18 {
+    print("Access Allow")
+} else {
+    print("Access Deneid")
+}

@@ -19,11 +19,11 @@
 #### `v0.1.0` — The Foundation
 - [x] **Lexer & Parser:** Creating grammar and tree (AST) on `Lark`.
 - [x] **AST & IR:** Designing an intermediate representation of the code.
-- [ ] **Code Gen:** Translation into the basic syntax of Rust (variables, `print`, types).
-- [ ] **Build Pipeline:** Direct integration with `cargo` for automatic binary file assembly.
+- [x] **Code Gen:** Translation into the basic syntax of Rust (variables, `print`, types).
+- [x] **Build Pipeline:** Direct integration with `cargo` for automatic binary file assembly.
 
 #### `v0.2.0` — Logic & Flow
-- [ ] **Control Flow:** Conditional operators (`if / else`).
+- [x] **Control Flow:** Conditional operators (`if / else`).
 - [ ] **Loops:** Implementing cycles (`for`, `while`).
 - [ ] **Functions:** Functions with arguments and return values.
 - [ ] **Operators:** A full set of arithmetic and logical operations.
