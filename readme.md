@@ -67,7 +67,7 @@ fn main() {
 
 ---
 
-## Community / Сообщество
+## Community
 
 The language is developed in public.
 
