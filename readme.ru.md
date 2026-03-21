@@ -3,7 +3,7 @@
   <h1>Crest Programming Language</h1>
   <p><b>Скорость Rust. Элегантность Python. Никакой боли с Borrow Checker.</b></p>
 
-  [![Version](https://img.shields.io/badge/version-0.1.0_alpha-blue.svg)]()
+  [![Version](https://img.shields.io/badge/version-0.2.0_alpha-blue.svg)]()
   [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
   [![YouTube](https://img.shields.io/badge/YouTube-Devlog-red.svg)](https://www.youtube.com/@Rizor1x)
 </div>
