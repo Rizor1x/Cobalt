@@ -35,7 +35,7 @@
 
 #### `v0.4.0` — Developer Experience (CLI)
 - [ ] **CLI Tool:** Creating a `crest` command (analogous to `cargo` or `go`).
-- [ ] **Project Management:** Implementing `crest init` and `crest run file.co`.
+- [ ] **Project Management:** Implementing `crest init` and `crest run file.crs`.
 - [ ] **Package System:** Basic module and dependency management.
 
 #### `v1.0.0` — Self-Hosting (Stable)
