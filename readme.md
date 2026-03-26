@@ -28,7 +28,7 @@
 - [x] **Operators:** A full set of arithmetic and logical (`and`, `or`) operations.
 
 ### `v0.3.0` — Data Structures
-- [ ] **Arrays & Lists:** Creation of `[1, 2, 3]` lists, indexing with `arr[0]`, and casting to `Vec<T>`.
+- [x] **Arrays & Lists:** Creation of `[1, 2, 3]` lists, indexing with `arr[0]`, and casting to `Vec<T>`.
 - [ ] **Dictionaries:** Basic support for key-value pairs (casting to `HashMap`).
 - [ ] **String Manipulation:** Built-in string methods (concatenation, interpolation).
 
@@ -44,7 +44,7 @@
 
 ### `v0.6.0` — Ecosystem & CLI (Ecosystem)
 - [ ] **Modularity:** The `use ./module.crs` import system and file separation.
-- [ ] **CLI Tool:** A full-fledged `crest` application (`init`, `run`, `build` commands).
+- [x] **CLI Tool:** A full-fledged `crest` application (`init`, `run`, `build` commands).
 - [ ] **Package System:** Basic dependency management.
 
 ### `v0.7.0` — System Level (Preparing for OS creation)

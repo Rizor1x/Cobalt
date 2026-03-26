@@ -1,47 +1,44 @@
-val limit: int = 5
-var count = 0
-val float_val: float = 3.14
-
-print("--- Start ---")
-
-// Тест логики и условий
-if count < limit and float_val > 3.0 {
-    print("Logic works!")
-} else {
-    print("Logic broken!")
+// 1. Тест функций и математики
+fn multiply(a: int, b: int) -> int {
+    return a * b
 }
 
-// Тест циклов и математики
-print("--- While Loop ---")
-while count < 3 {
-    print(count)
+print("=== CREST OS: ИНИЦИАЛИЗАЦИЯ ===")
+
+// 2. Тест ВВОДА ДАННЫХ (input)
+val user = input("Введите ваше имя: ")
+
+// 3. Тест логики и условий
+if user == "Rizor1x" {
+    print("С возвращением, Создатель!")
+} else {
+    print("Приветствую, пользователь:")
+    print(user)
+}
+
+// 4. Тест динамических списков (векторов)
+print("---")
+var numbers = [10, 20, 30]
+print("Создан массив из 3 элементов. Начинаем добавление...")
+
+// 5. Тест цикла While и вызова методов массива
+var count = 0
+while count < 2 {
+    numbers.push(100) // Вызываем метод Rust напрямую!
     count = count + 1
 }
 
-// Тест цикла for и диапазонов
-print("--- For Loop ---")
-for i in 0 .. 3 {
-    val res = i * 2
-    print(res)
+// 6. Тест получения свойств
+val length: int = numbers.len()
+print("Новая длина массива:")
+print(length)
+
+// 7. Тест цикла For, диапазонов и вызова наших функций
+print("---")
+print("Умножаем индексы на 10:")
+for i in 0 .. length {
+    val result = multiply(i, 10)
+    print(result)
 }
 
-// Функция, которая складывает два числа
-fn add(a: int, b: int, c: int) -> int {
-    val result: int = a + b + c
-    return result
-}
-
-// Функция без возврата (просто печатает)
-fn greet(name: str) {
-    print("Hello from Crest!")
-    print(name)
-}
-
-print("--- Тест функций ---")
-
-// Вызываем наши функции!
-val sum = add(10, 5, 10)
-print("Сумма 10, 5 и 10:")
-print(sum)
-
-greet("Rizor1x")
+print("=== ТЕСТ УСПЕШНО ПРОЙДЕН ===")

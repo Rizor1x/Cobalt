@@ -1,5 +1,5 @@
 from lark import Transformer
-from error import CrestError
+from .error import CrestError
 
 class RustGen(Transformer):
     def __init__(self, code, file_path):
@@ -10,16 +10,21 @@ class RustGen(Transformer):
 
     def start(self, statements):
         code = "\n    ".join(statements)
-        return f"fn main() {{\n    {code}\n}}"
-    
-    def block(self, items):
-        self.level += 1
-        indent = "    " * self.level
+        
+        runtime_helpers = """
+        // --- Crest Runtime ---
+        use std::io::Write;
 
-        code = f"\n{indent}".join(items)
-
-        self.level -= 1
-        return f"{{\n{indent}{code}\n{'    ' * self.level}}}"
+        fn __crest_input(prompt: &str) -> String {
+            print!("{}", prompt);
+            std::io::stdout().flush().unwrap();
+            let mut buf = String::new();
+            std::io::stdin().read_line(&mut buf).unwrap();
+            buf.trim().to_string()
+        }
+        // ---------------------
+        """
+        return f"{runtime_helpers}\nfn main() {{\n    {code}\n}}"
     
     def condition(self, items):
         res = []
@@ -36,12 +41,10 @@ class RustGen(Transformer):
         return " ".join(res)
 
     def return_stmt(self, items):
-        # Возврат из функции
         expr = items[0]
         return f"return {expr};"
 
     def param(self, items):
-        # Параметр функции, например: a: int
         name = items[0].value
         t_token = items[1]
         t_name = t_token.value
@@ -54,81 +57,103 @@ class RustGen(Transformer):
         return f"{name}: {valid_types[t_name]}"
 
     def params(self, items):
-        # Склеиваем параметры через запятую: a: i32, b: i32
         return ", ".join(items)
+    
+    def block(self, items):
+        self.level += 1
+        indent = "    " * self.level
+        code = f"\n{indent}".join([self.transform(i) for i in items])
+        self.level -= 1
+        return f"{{\n{indent}{code}\n{'    ' * self.level}}}"
 
     def fn_stmt(self, items):
         name = items[0].value
+        args = items[1] if items[1] is not None else ""
         
-        # 1. Обрабатываем аргументы (если они есть)
-        args = ""
-        if items[1] is not None:
-            args = items[1] # Это уже склеенная строка из метода params
-            
-        # 2. Обрабатываем тип возврата (если он есть)
         ret_type = ""
         if items[2] is not None:
-            t_token = items[2]
-            t_name = t_token.value
+            t_name = items[2].value
             valid_types = {"int": "i32", "float": "f64", "str": "String", "bool": "bool"}
+            ret_type = f" -> {valid_types.get(t_name, 'i32')}"
             
             if t_name not in valid_types:
                 raise CrestError(
                     message=f"Неизвестный тип возврата '{t_name}'",
-                    token=t_token,
+                    token=t_name,
                     code=self.code,
                     file_path=self.file_path,
                     help_msg="Доступные типы: int, float, str, bool."
                 )
             ret_type = f" -> {valid_types[t_name]}"
             
-        # 3. Блок кода
-        block_code = items[3]
-        
+        block_code = self.transform(items[3])
         return f"fn {name}({args}){ret_type} {block_code}"
 
     def while_stmt(self, items):
         cond = items[0]
-        w_block = items[1]
+        w_block = self.transform(items[1]) 
         return f"while {cond} {w_block}"
 
     def for_stmt(self, items):
         iterator_name = items[0].value
         start_val = items[1]
         end_val = items[3]
-        f_block = items[4]
+        f_block = self.transform(items[4])
 
         return f"for {iterator_name} in {start_val}..{end_val} {f_block}"
 
     def if_stmt(self, items):
         cond = items[0]
-        if_block = items[1]
-        
+        if_block = self.transform(items[1])
+
         if len(items) == 3:
-            else_block = items[2]
+            else_block = self.transform(items[2])
             return f"if {cond} {if_block} else {else_block}"
-        else:
-            return f"if {cond} {if_block}"
-    
+        return f"if {cond} {if_block}"
+        
     def arguments(self, items):
-        # items - это список сгенерированных строк-выражений (например:["10", "5"])
-        # Просто склеиваем их через запятую
-        return ", ".join(items)
+        return ", ".join([str(i) for i in items])
+    
+    def method_call(self, items):
+        obj_name = items[0].value
+        method_name = items[1].value
+        
+        args = ""
+        if len(items) > 2 and items[2] is not None:
+            args = items[2]
+            
+        call = f"{obj_name}.{method_name}({args})"
+        
+        if method_name == "len":
+            return f"({call} as i32)"
+            
+        return call
+
+    def method_call_stmt(self, items):
+        call_str = items[0]
+        return f"{call_str};"
+
+    def list_expr(self, items):
+        if len(items) > 0 and items[0] is not None:
+            args = items[0]
+            return f"vec![{args}]"
+        else:
+            return "vec![]"
 
     def fn_call(self, items):
-        # Вызов функции: name(args)
         name = items[0].value
         
         args = ""
-        # Если аргументы есть, они будут в items[1]
-        if len(items) > 1:
+        if len(items) > 1 and items[1] is not None:
             args = items[1]
+            
+        if name == "input":
+            prompt_arg = f"&{args}" if args else '""'
+            return f"__crest_input({prompt_arg})"
             
         return f"{name}({args})"
 
     def fn_call_stmt(self, items):
-        # Если вызов функции - это отдельная строчка (как greet("Rizor1x")), 
-        # нам нужно добавить точку с запятой в конце для Rust!
         call_str = items[0]
         return f"{call_str};"
 

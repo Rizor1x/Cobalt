@@ -26,7 +26,7 @@ crest_grammar = r"""
 
     // --- СТРУКТУРА ---
     start: statement+
-    ?statement: var_decl | assign_stmt | print_stmt | if_stmt | while_stmt | for_stmt | fn_stmt| return_stmt | fn_call_stmt
+    ?statement: var_decl | assign_stmt | print_stmt | if_stmt | while_stmt | for_stmt | fn_stmt| return_stmt | fn_call_stmt | method_call_stmt
 
     block: "{" statement+ "}"
 
@@ -41,9 +41,12 @@ crest_grammar = r"""
     return_stmt: "return" expression
 
     arguments: expression ("," expression)*
+
     fn_call: NAME "(" [arguments] ")"
-    
     fn_call_stmt: fn_call
+
+    method_call: NAME "." NAME "(" [arguments] ")"
+    method_call_stmt: method_call
 
     condition: (expression | COMPARE_OP | LOGIC_OP)+
 
@@ -54,14 +57,18 @@ crest_grammar = r"""
 
     print_stmt: "print" "(" expression ")"
 
+    list_expr: "[" [arguments] "]"
+
     // --- МАТЕМАТИКА ---
     ?expression: term
     ?term: factory ((PLUS | MINUS) factory)*
     ?factory: atom ((MUL | DIV) atom)*
     ?atom: FLOAT  -> float_num
         | INT    -> int_num
-        | STRING -> string 
-        | fn_call          
+        | STRING -> string
+        | method_call
+        | fn_call
+        | list_expr
         | NAME   -> var_name
 
     ESCAPED_STRING: /"[^"]*"/

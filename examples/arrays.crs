@@ -1,0 +1,8 @@
+// Создаем список (динамический массив)
+val numbers = [10, 20, 30, 40]
+
+// Вызовем встроенный метод Rust .len()
+val length = numbers.len()
+
+print("Длина массива:")
+print(length)
