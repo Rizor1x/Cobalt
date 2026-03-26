@@ -24,3 +24,24 @@ for i in 0 .. 3 {
     val res = i * 2
     print(res)
 }
+
+// Функция, которая складывает два числа
+fn add(a: int, b: int, c: int) -> int {
+    val result: int = a + b + c
+    return result
+}
+
+// Функция без возврата (просто печатает)
+fn greet(name: str) {
+    print("Hello from Crest!")
+    print(name)
+}
+
+print("--- Тест функций ---")
+
+// Вызываем наши функции!
+val sum = add(10, 5, 10)
+print("Сумма 10, 5 и 10:")
+print(sum)
+
+greet("Rizor1x")

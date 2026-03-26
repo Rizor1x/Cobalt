@@ -26,7 +26,7 @@ crest_grammar = r"""
 
     // --- СТРУКТУРА ---
     start: statement+
-    ?statement: var_decl | assign_stmt | print_stmt | if_stmt | while_stmt | for_stmt
+    ?statement: var_decl | assign_stmt | print_stmt | if_stmt | while_stmt | for_stmt | fn_stmt| return_stmt | fn_call_stmt
 
     block: "{" statement+ "}"
 
@@ -34,7 +34,17 @@ crest_grammar = r"""
     while_stmt: "while" condition block
     for_stmt: "for" NAME "in" expression DOTDOT expression block
 
-    // Условие - теперь принимает и выражения, и операторы
+    param: NAME ":" TYPE
+    params: param ("," param)*
+
+    fn_stmt: "fn" NAME "(" [params] ")" ["->" TYPE] block
+    return_stmt: "return" expression
+
+    arguments: expression ("," expression)*
+    fn_call: NAME "(" [arguments] ")"
+    
+    fn_call_stmt: fn_call
+
     condition: (expression | COMPARE_OP | LOGIC_OP)+
 
     var_decl: (VAL | VAR) NAME ":" TYPE "=" expression -> decl_with_type 
@@ -51,6 +61,7 @@ crest_grammar = r"""
     ?atom: FLOAT  -> float_num
         | INT    -> int_num
         | STRING -> string 
+        | fn_call          
         | NAME   -> var_name
 
     ESCAPED_STRING: /"[^"]*"/

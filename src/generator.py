@@ -35,6 +35,58 @@ class RustGen(Transformer):
             
         return " ".join(res)
 
+    def return_stmt(self, items):
+        # Возврат из функции
+        expr = items[0]
+        return f"return {expr};"
+
+    def param(self, items):
+        # Параметр функции, например: a: int
+        name = items[0].value
+        t_token = items[1]
+        t_name = t_token.value
+        
+        valid_types = {"int": "i32", "float": "f64", "str": "String", "bool": "bool"}
+        
+        if t_name not in valid_types:
+            raise CrestError(f"Неизвестный тип аргумента '{t_name}'", t_token, self.code, self.file_path)
+            
+        return f"{name}: {valid_types[t_name]}"
+
+    def params(self, items):
+        # Склеиваем параметры через запятую: a: i32, b: i32
+        return ", ".join(items)
+
+    def fn_stmt(self, items):
+        name = items[0].value
+        
+        # 1. Обрабатываем аргументы (если они есть)
+        args = ""
+        if items[1] is not None:
+            args = items[1] # Это уже склеенная строка из метода params
+            
+        # 2. Обрабатываем тип возврата (если он есть)
+        ret_type = ""
+        if items[2] is not None:
+            t_token = items[2]
+            t_name = t_token.value
+            valid_types = {"int": "i32", "float": "f64", "str": "String", "bool": "bool"}
+            
+            if t_name not in valid_types:
+                raise CrestError(
+                    message=f"Неизвестный тип возврата '{t_name}'",
+                    token=t_token,
+                    code=self.code,
+                    file_path=self.file_path,
+                    help_msg="Доступные типы: int, float, str, bool."
+                )
+            ret_type = f" -> {valid_types[t_name]}"
+            
+        # 3. Блок кода
+        block_code = items[3]
+        
+        return f"fn {name}({args}){ret_type} {block_code}"
+
     def while_stmt(self, items):
         cond = items[0]
         w_block = items[1]
@@ -58,6 +110,28 @@ class RustGen(Transformer):
         else:
             return f"if {cond} {if_block}"
     
+    def arguments(self, items):
+        # items - это список сгенерированных строк-выражений (например:["10", "5"])
+        # Просто склеиваем их через запятую
+        return ", ".join(items)
+
+    def fn_call(self, items):
+        # Вызов функции: name(args)
+        name = items[0].value
+        
+        args = ""
+        # Если аргументы есть, они будут в items[1]
+        if len(items) > 1:
+            args = items[1]
+            
+        return f"{name}({args})"
+
+    def fn_call_stmt(self, items):
+        # Если вызов функции - это отдельная строчка (как greet("Rizor1x")), 
+        # нам нужно добавить точку с запятой в конце для Rust!
+        call_str = items[0]
+        return f"{call_str};"
+
     def decl_with_type(self, items):
         var_type = "let" if items[0].value == "val" else "let mut"
         var_name = items[1].value

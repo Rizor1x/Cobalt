@@ -16,32 +16,46 @@
 **Crest** is a statically typed, compiled programming language of the next generation. Under the hood, Crest is a **source-to-source transpiler**. It takes your `.crs` code, intelligently analyzes it, and generates highly optimized Rust code.
 
 ## Roadmap
-#### `v0.1.0` — The Foundation
-- [x] **Lexer & Parser:** Creating grammar and tree (AST) on `Lark`.
-- [x] **AST & IR:** Designing an intermediate representation of the code.
-- [x] **Code Gen:** Translation into the basic syntax of Rust (variables, `print`, types).
-- [x] **Build Pipeline:** Direct integration with `cargo` for automatic binary file assembly.
+### `v0.1.0` — The Foundation
+- [x] **Lexer & Parser:** Generates EBNF grammars and tree (AST) using `Lark`.
+- [x] **Code Gen:** Translates to basic Rust syntax (variables, `print`, `int/float/str/bool` types).
+- [x] **Build Pipeline:** Integration with the `rustc` compiler for automatic building and running.
 
-#### `v0.2.0` — Logic & Flow
-- [x] **Control Flow:** Conditional operators (`if / else`).
-- [x] **Loops:** Implementing cycles (`for`, `while`).
-- [ ] **Functions:** Functions with arguments and return values.
-- [x] **Operators:** A full set of arithmetic and logical operations.
+### `v0.2.0` — Logic & Flow
+- [x] **Control Flow:** Conditional statements (`if / else`).
+- [x] **Loops:** Implements loops (`for .. in`, `while`).
+- [x] **Functions:** `fn` declaration, function calls, arguments, and `return`.
+- [x] **Operators:** A full set of arithmetic and logical (`and`, `or`) operations.
 
-#### `v0.3.0` — Data & Safety
-- [ ] **Object Model:** Implementing `class` with auto-generation of `struct` and `impl` in Rust.
-- [ ] **Memory Safety:** Smart auto-referencing and `.clone()` management (getting rid of Borrow Checker pain).
-- [ ] **Error Handling:** Safe error handling via `Result` and the `?` operator.
+### `v0.3.0` — Data Structures
+- [ ] **Arrays & Lists:** Creation of `[1, 2, 3]` lists, indexing with `arr[0]`, and casting to `Vec<T>`.
+- [ ] **Dictionaries:** Basic support for key-value pairs (casting to `HashMap`).
+- [ ] **String Manipulation:** Built-in string methods (concatenation, interpolation).
 
-#### `v0.4.0` — Developer Experience (CLI)
-- [ ] **CLI Tool:** Creating a `crest` command (analogous to `cargo` or `go`).
-- [ ] **Project Management:** Implementing `crest init` and `crest run file.crs`.
-- [ ] **Package System:** Basic module and dependency management.
+### `v0.4.0` — Architecture & OOP
+- [ ] **Object Model:** `class` implementation with transparent auto-generation of `struct` and `impl` in Rust.
+- [ ] **Methods & `self`:** Dotted method invocation (`obj.method()`) and state mutation.
+- [ ] **Traits (Interfaces):** Interface support for implementing polymorphism.
 
-#### `v1.0.0` — Self-Hosting (Stable)
-- [ ] **Standard Library:** Writing a basic standard library in Crest.
-- [ ] **Compiler Rewrite:** Rewriting the compiler from Python to Crest itself.
-- [ ] **Final Polish:** API stabilization, testing, and preparation for the first stable release.
+### `v0.5.0` — Safety & Error Handling
+- [ ] **Error Handling:** Typed `Result[T, E]` error system and `?` early return operator.
+- [ ] **Option Type:** Null-Reference Exception avoidance via the `Option` type (Some/None).
+- [ ] **Memory Management:** A "smart" generator that automatically places `.clone()`, hiding the pain of `Borrow Checker` from the user.
+
+### `v0.6.0` — Ecosystem & CLI (Ecosystem)
+- [ ] **Modularity:** The `use ./module.crs` import system and file separation.
+- [ ] **CLI Tool:** A full-fledged `crest` application (`init`, `run`, `build` commands).
+- [ ] **Package System:** Basic dependency management.
+
+### `v0.7.0` — System Level (Preparing for OS creation)
+- [ ] **Bare Metal:** The `[no_std]` flag to disable the Rust standard library.
+- [ ] **Unsafe Memory:** `unsafe { ... }` blocks for directly working with pointers and hardware.
+- [ ] **FFI (C-Interop):** The `extern` keyword for calling C/Rust drivers.
+
+### `v1.0.0` — Self-Hosting (Stable Release)
+- [ ] **Standard Library:** Writing a library (`std::io`, `std::fs`) on Crest itself.
+- [ ] **Compiler Rewrite:** Rewriting the entire compiler from Python to Crest.
+- [ ] **Stable API:** Final polishing and release candidate.
 
 ## Code Example
 ```Crest
