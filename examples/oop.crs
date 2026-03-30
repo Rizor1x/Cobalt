@@ -1,0 +1,28 @@
+// 1. Тестируем Словари и Индексы
+var dict = {"HP": 100, "MANA": 50}
+val my_hp = dict["HP"]
+
+print("Мое здоровье из словаря:")
+print(my_hp)
+
+var arr = [10, 20, 30]
+val first = arr[2]
+print("Первый элемент массива:")
+print(first)
+
+print("---")
+
+// 2. ТЕСТИРУЕМ КЛАССЫ!
+class Voxel {
+    // Поля (переменные класса)
+    val x: int
+    val y: int
+    val z: int
+    var id: int
+
+    // Метод (функция внутри класса)
+    fn is_air(self) -> bool {
+        // Если ID == 0, значит это воздух
+        return self.id == 0
+    }
+}

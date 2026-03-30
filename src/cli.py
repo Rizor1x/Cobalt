@@ -1,9 +1,14 @@
 import sys
 import os
 import subprocess
-from .parser import parse_code
-from .generator import RustGen
-from .error import CrestError
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+
+from parser import parse_code
+from generator import RustGen
+from error import CrestError
 
 def build_and_run(file_path, run_after_build=True):
     if not os.path.exists(file_path):
@@ -28,6 +33,8 @@ def build_and_run(file_path, run_after_build=True):
 
         with open(rs_file_path, "w", encoding="utf-8") as f:
             f.write(rust_code)
+
+        subprocess.run(["rustfmt", rs_file_path], capture_output=True)
 
         compile_process = subprocess.run(["rustc", rs_file_path, "-o", exe_file_path], capture_output=True, text=True)
 

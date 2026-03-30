@@ -29,11 +29,11 @@
 
 ### `v0.3.0` — Data Structures
 - [x] **Arrays & Lists:** Creation of `[1, 2, 3]` lists, indexing with `arr[0]`, and casting to `Vec<T>`.
-- [ ] **Dictionaries:** Basic support for key-value pairs (casting to `HashMap`).
+- [x] **Dictionaries:** Basic support for key-value pairs (casting to `HashMap`).
 - [ ] **String Manipulation:** Built-in string methods (concatenation, interpolation).
 
 ### `v0.4.0` — Architecture & OOP
-- [ ] **Object Model:** `class` implementation with transparent auto-generation of `struct` and `impl` in Rust.
+- [x] **Object Model:** `class` implementation with transparent auto-generation of `struct` and `impl` in Rust.
 - [ ] **Methods & `self`:** Dotted method invocation (`obj.method()`) and state mutation.
 - [ ] **Traits (Interfaces):** Interface support for implementing polymorphism.
 
